@@ -1,0 +1,7 @@
+<nav class="flex flex-column gap-10 min-w-full justify-end items-center py-4 animate fadeInDown">
+  <a *ngFor="let link of links" [href]="link.path">
+    <div class="text-2xl capitalize hover-bg-glass-black p-3 rounded-md hover:text-white hover-underline-animation">
+        {{link.content}}
+    </div>
+  </a>
+</nav>

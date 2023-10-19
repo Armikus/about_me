@@ -1,0 +1,59 @@
+.bg-glass-black {
+  background: rgba( 6, 6, 6, 0.85 );
+}
+
+.blur-50 {
+  backdrop-filter: blur( 50px );
+  -webkit-backdrop-filter: blur( 50px );
+}
+
+.shadow-black {
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.20 );
+}
+
+.border-glass-black {
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.min-height-90-screen{
+  min-height: 80vh;
+}
+
+.text-gradient {
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to left, #5fded8, #459693);
+}
+
+.background-gradient {
+  background-image: linear-gradient(to left, #5fded8, #459693);
+}
+
+.photo {
+  display: flex;
+	position: relative;
+	width: 360px;
+  height: 500px;
+	background-image: url('/assets/images/profile_picture.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 300px;
+ }
+
+.photo:after {
+  content: '';
+  background: inherit;
+  background-size: inherit;
+  background-repeat: inherit;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  bottom: -20px;
+  right: -15px;
+  border-radius: inherit;
+  z-index: -1;
+  filter: blur(10px);
+
+}
