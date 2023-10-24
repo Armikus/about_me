@@ -1,14 +1,16 @@
-.bg-glass-black {
-  background: rgba( 6, 6, 6, 0.85 );
+@import "../../breakpoints";
+
+.bg-glass-white {
+  background: rgba(213, 213, 213, 0.041);
 }
 
-.blur-50 {
-  backdrop-filter: blur( 50px );
+.blur-4 {
+  backdrop-filter: blur( 4px );
   -webkit-backdrop-filter: blur( 50px );
 }
 
 .shadow-black {
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.20 );
+  box-shadow: 0 8px 32px 0 rgba(53, 53, 54, 0.37);
 }
 
 .border-glass-black {
@@ -33,27 +35,36 @@
 .photo {
   display: flex;
 	position: relative;
-	width: 360px;
-  height: 500px;
+	width: 400px;
+  aspect-ratio: 3/4;
 	background-image: url('/assets/images/profile_picture.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
-	border-radius: 300px;
- }
+	border-radius: 3%;
 
-.photo:after {
-  content: '';
-  background: inherit;
-  background-size: inherit;
-  background-repeat: inherit;
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: absolute;
-  bottom: -20px;
-  right: -15px;
-  border-radius: inherit;
-  z-index: -1;
-  filter: blur(10px);
+  &:after {
+    content: '';
+    background: inherit;
+    background-size: inherit;
+    background-repeat: inherit;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    bottom: -20px;
+    right: -15px;
+    border-radius: inherit;
+    z-index: -1;
+    filter: blur(10px);
+
+  }
+
+  @media screen and (max-width: $laptop) {
+    width: 300px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    width: 250px;
+  }
 
 }

@@ -20,3 +20,14 @@
   transform: scaleX(1);
   transform-origin: bottom left;
 }
+
+
+.animate-menu-steps {
+  $steps: 5;
+  $diffrenceBetweenSteps: 0.1;
+  @for $i from 1 through $steps {
+    &:nth-child(#{$i}){
+      animation-delay: #{$i * $diffrenceBetweenSteps}s;
+    }
+  }
+}
