@@ -10,7 +10,7 @@ export interface Link {
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss', '../../animations.scss']
+  styleUrls: ['./navbar.component.scss', '../../animations.scss', '../home/home.component.scss']
 })
 export class NavbarComponent {
   links: Link[] = [
@@ -41,4 +41,10 @@ export class NavbarComponent {
     },
   ]
 
+  mobileMenuVisible: boolean = false;
+
+
+  public toggleMobileMenu() {
+    this.mobileMenuVisible = !this.mobileMenuVisible
+  }
 }

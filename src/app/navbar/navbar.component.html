@@ -1,7 +1,25 @@
 <nav class="flex flex-column gap-10 min-w-full justify-end items-center py-4 animate fadeInDown">
-  <a *ngFor="let link of links" [href]="link.path">
-    <div class="text-2xl capitalize hover-bg-glass-black p-3 rounded-md hover:text-white hover-underline-animation">
-        {{link.content}}
-    </div>
-  </a>
+  <div class="hidden lg:flex lg:gap-10"> 
+    <a *ngFor="let link of links" [href]="link.path">
+      <div class="text-xl capitalize hover-bg-glass-black p-3 rounded-md hover:text-white hover-underline-animation">
+          {{link.content}}
+      </div>
+    </a>
+  </div>
+
+  <div class="lg:hidden w-full flex fixed top-0 left-0 pl-5 pb-5 gap-5 justify-start items-start">
+    <button (click)="toggleMobileMenu()" class="navbar-burger pt-1 flex items-center text-white ">
+      <svg class="block h-6 w-6 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <title>Mobile menu</title>
+        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+      </svg>
+    </button>
+      <div *ngIf="mobileMenuVisible" class="flex h-full w-3/4 flex-col animate-menu-steps justify-start gap-1 items-start"> 
+        <a *ngFor="let link of links" class="grow w-full fadeInLeft" [href]="link.path">
+          <div class="text-xl capitalize bg-black/50 p-3 grow w-full text-white rounded-md blur-4 hover:text-white hover-underline-animation">
+              {{link.content}}
+          </div>
+        </a>
+      </div>
+  </div>
 </nav>
